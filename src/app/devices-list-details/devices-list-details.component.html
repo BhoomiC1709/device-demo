@@ -1,0 +1,42 @@
+
+<a routerLink="/devices">Back</a>
+<div class="main-device-cls">
+  <div class="row">
+    <div class="col-sm-6">
+      <form class="d-flex" style="margin-bottom:20px;">
+        <input class="form-control" type="text" name="search" placeholder="Search">
+      </form>
+
+      <ul class="list-group devicess">
+        <li *ngFor="let device of device_lists" class="list-group-item bg-light align-items-center"
+            [class.selected]="device === selectedDevice">
+          <!-- (click)="onSelect(device)" -->
+          <a routerLink="/devices-detail">
+            <i class="bi bi-phone-fill"></i>
+            <span style="margin-left:10px;">{{device.name}}</span>
+            <span class="badge rounded-pill float-end">  <i class="bi bi-exclamation-circle-fill"></i></span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+    <div class="col-sm-6">
+
+      <div class="card">
+        <div class="card-header">
+          Details: Device
+        </div>
+        <div class="card-body">
+          <p class="card-text">Status : Avaible</p>
+          <p class="card-text">Temperature : 10 Celsius</p>
+          <p class="card-text">Usage:</p>
+          <img src="../assets/images/graph.png" alt="graph" style="width:100%" />
+          <br />          <br />
+          <a routerLink="/devices" class="btn btn-primary">Back</a>
+        </div>
+      </div>
+
+     
+    </div>
+  </div>
+  </div>

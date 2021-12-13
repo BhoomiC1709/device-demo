@@ -1,0 +1,67 @@
+
+<!--<nav class="navbar navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand">Navbar</a>
+    <form class="d-flex">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+             placeholder="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>-->
+
+<div class="main-device-cls">
+  <h3>Device list</h3>
+  <div class="row">
+    <div class="col-sm-6">
+
+      <form class="d-flex" style="margin-bottom:20px;">
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+               placeholder="Search">
+       <!-- <button class="btn btn-outline-success" type="submit">Search</button>-->
+      </form>
+
+      <ul class="list-group devicess">
+        <li *ngFor="let device of device_lists | filter:searchText" class="list-group-item bg-light align-items-center"
+            [class.selected]="device === selectedDevice">
+          <!-- (click)="onSelect(device)" -->
+          <a routerLink="/devices-detail">
+            <i class="bi bi-phone-fill"></i>
+            <span style="margin-left:10px;">{{device.name}}</span>
+            <span class="badge rounded-pill float-end">  <i class="bi bi-exclamation-circle-fill"></i></span>
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+    <div class="col-sm-6">
+
+    </div>
+  </div>
+
+  <!--<ul class="devicess">
+    <li *ngFor="let device of devicess"
+        [class.selected]="device === selectedDevice" (click)="onSelect(device)" >
+      <span class="badge">{{device.id}}</span> {{device.name}}
+    </li>
+  </ul>
+
+  <div *ngIf="selectedDevice">
+
+    <h2>{{selectedDevice.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{selectedDevice.id}}</div>
+    <div>
+      <label>
+        name:
+        <input [(ngModel)]="selectedDevice.name" placeholder="name" />
+      </label>
+    </div>
+
+  </div>-->
+
+</div>
+
+
+
+
